@@ -1,15 +1,16 @@
-const { createContext , useState, useEffect} = require("react");
 import { useNavigate } from "react-router-dom";
 import {baseUrl} from "../baseUrl" ;
+const { createContext , useState, useEffect} = require("react");
 
 export const MyContext = createContext();
 
 export function MyContextProvider({children}){
-
+  
   const [quote , setQuote] = useState("");
   const [savedQuotes , setSavedQuotes] = useState([]);
-
+  
   const navigate = useNavigate();
+  // const url = baseUrl ;
 
   const fetchQuotes = async () =>{
     try{
